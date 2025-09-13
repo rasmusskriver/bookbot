@@ -1,9 +1,3 @@
-def get_book_txt(filepath):
-    with open(filepath) as f:
-        file_contents = f.read()
-        print(file_contents)
-
-
 def get_book_word(filepath):
     with open(filepath) as f:
         count = 0
@@ -35,7 +29,6 @@ def get_letter_count(filepath):
         if fisk.isalpha() == True:
             opslags_list.append({"char": fisk, "num": fiskeren})
 
-    # print(opslags_list)
     opslags_list.sort(reverse=True, key=sort_on)
     return opslags_list
 
