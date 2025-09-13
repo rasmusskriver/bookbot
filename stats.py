@@ -11,7 +11,7 @@ def get_book_word(filepath):
         fisk = file_contents.split()
         for word in fisk:
             count += 1
-    print(f"{count} words found in the document")
+    return f"{count} words found in the document"
 
 
 def sort_on(items):
@@ -32,7 +32,8 @@ def get_letter_count(filepath):
                 opslags_vark[letter] = 1
     for fisk in opslags_vark:
         fiskeren = opslags_vark[fisk]
-        opslags_list.append({"char": fisk, "num": fiskeren})
+        if fisk.isalpha() == True:
+            opslags_list.append({"char": fisk, "num": fiskeren})
 
     # print(opslags_list)
     opslags_list.sort(reverse=True, key=sort_on)
@@ -40,8 +41,15 @@ def get_letter_count(filepath):
 
 
 def the_last():
-    fisk = "books/frankenstein.txt"
-    count = get_letter_count(fisk)
+    path = "books/frankenstein.txt"
+    words = get_letter_count(path)
+    count = get_book_word(path)
     print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {fisk}")
-    print(count)
+    print(f"Analyzing book found at {path}...")
+    print("----------- Word Count ----------")
+    print(f"{count}")
+    print("--------- Character Count -------")
+    for word in words:
+        if word != None:
+            print(f"{word["char"]}: {word["num"]}")
+    print("============= END ===============")
