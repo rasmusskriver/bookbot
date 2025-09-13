@@ -5,7 +5,7 @@ def get_book_word(filepath):
         fisk = file_contents.split()
         for word in fisk:
             count += 1
-    return f"{count} words found in the document"
+    return f"Found {count} total words"
 
 
 def sort_on(items):
