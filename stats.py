@@ -33,8 +33,8 @@ def get_letter_count(filepath):
     return opslags_list
 
 
-def the_last():
-    path = "books/frankenstein.txt"
+def the_last(path):
+    # path = "books/frankenstein.txt"
     words = get_letter_count(path)
     count = get_book_word(path)
     print("============ BOOKBOT ============")
